@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_040315) do
+ActiveRecord::Schema.define(version: 2020_11_26_043537) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "stylist_id"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_11_25_040315) do
   end
 
   create_table "stylists", force: :cascade do |t|
-    t.string "username"
     t.string "name"
     t.string "email_address"
     t.string "password_digest"
