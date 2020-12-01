@@ -5,11 +5,10 @@ class StylistController < ApplicationController
     end
 
     def create
-        byebug
         @stylist = Stylist.new(stylist_params)
         if @stylist.save
           session[:stylist_id] = @stylist.id
-          redirect_to stylist_path(@stylist)
+          redirect_to login_path(@stylist)
         else
           render :new
         end
@@ -24,7 +23,7 @@ class StylistController < ApplicationController
     private
 
     def stylist_params
-      params.require(:stylist).permit(:email, :password)
+      params.require(:stylists).permit(:email, :password)
     end
     
 end
