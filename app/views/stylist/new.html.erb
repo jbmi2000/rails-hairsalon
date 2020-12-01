@@ -1,1 +1,22 @@
-<h3>Hey New Stylist</h3>
+<h3>Welcome New Stylist</h3>
+<h5>Please Create your account</h5>
+
+<%= form_for :stylists do |f| %>
+
+    <br>
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+  
+    <br>
+  
+    <%= f.label :email %>  
+    <%= f.email_field :email, placeholder: "This will be your username" %>
+    <br>
+  
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+  
+    <%= f.submit "Sign Up" %>
+  
+  <% end %>

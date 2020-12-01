@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#logout', as: 'logout'
 
+  post '/stylist/new', to: 'stylist#create', as: 'new'
+
 end
