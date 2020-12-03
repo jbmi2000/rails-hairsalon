@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Stylist.destroy_all
+
+styl = Stylist.create(name: 'Jeff', email: 'jeff@1.com', password: '1234567')
+sty2 = Stylist.create(name: 'John', email: 'john@1.com', password: '1234567')
+
+
