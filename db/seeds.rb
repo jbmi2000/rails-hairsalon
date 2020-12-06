@@ -8,7 +8,7 @@
 
 Stylist.destroy_all
 
-styl = Stylist.create(name: 'Jeff', email: 'jeff@1.com', password: '1234567')
-sty2 = Stylist.create(name: 'John', email: 'john@1.com', password: '1234567')
+sty = Stylist.create(name: 'Jeff', email: 'jeff@1.com', password: '1234567')
+#sty2 = Stylist.create(name: 'John', email: 'john@1.com', password: '1234567')
 
 

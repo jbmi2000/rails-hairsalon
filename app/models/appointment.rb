@@ -1,4 +1,4 @@
 class Appointment < ApplicationRecord
     belongs_to :stylists
-    belongs to :clients
+    belongs_to :clients
 end

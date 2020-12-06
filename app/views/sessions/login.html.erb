@@ -1,5 +1,8 @@
 <h1>Welcome to The 1 Salon Stylist Client Manager</h1><br>
 Please sign in: <br><br>
+
+<%= render "layouts/errors", errors: @stylist.errors.full_messages %>
+
 <%= form_with model: @stylist, url: login_path do |f| %>
     <%= f.label "email" %>
     <%= f.email_field :email %>
@@ -9,8 +12,4 @@ Please sign in: <br><br>
 
     <%= f.submit "Login" %>
 
- <% if @stylist.errors.any? %>
-    <p>There were errors:</p>
-    <p><%= @stylist.errors.full_messages.join(" | ") %></p>
-  <% end %>
 <% end %>

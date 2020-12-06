@@ -1,6 +1,6 @@
 class ClientController < ApplicationController
 
-    before_action :find_client 
+    before_action :find_client, only: [:show, :edit, :update, :destroy]
 
     def index
         @clients = Client.all
@@ -31,6 +31,8 @@ class ClientController < ApplicationController
     end
 
     def destroy
+        @client.destroy
+        redirect_to client_index_path
     end
 
 

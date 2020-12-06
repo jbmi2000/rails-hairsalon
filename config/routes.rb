@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "sessions#login"
   
   resources :client
-  resources :stylist, only: [:new, :create, :edit, :update, :show]
+  resources :stylist # only: [:new, :create, :edit, :update, :show]
   resources :appointment, only: [:new, :create, :edit, :update, :destroy]
 
   get '/login', to: 'sessions#login', as: 'login'
@@ -14,7 +14,5 @@ Rails.application.routes.draw do
   post "stylist/new", to: "stylist#create"
 
   delete '/logout', to: 'sessions#logout', as: :logout
-
-  get "/profile", to: "stylist#profile", as: :profile
 
 end
