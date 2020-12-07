@@ -14,7 +14,7 @@
       <%= button_to "Logout", logout_path, method: :delete, id: "signout-button" %>
      <% end %>
 
-     <%# render "layouts/errors", errors: flash[:errors] %>
+     <%= render "layouts/errors", errors: flash[:errors] %>
 
     <%= yield %>
     

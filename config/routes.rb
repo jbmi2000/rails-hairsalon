@@ -4,15 +4,15 @@ Rails.application.routes.draw do
   root "sessions#login"
   
   resources :client
-  resources :stylist # only: [:new, :create, :edit, :update, :show]
+  resources :stylist, only: [:new, :create, :edit, :update, :show]
   resources :appointment, only: [:new, :create, :edit, :update, :destroy]
 
   get '/login', to: 'sessions#login', as: 'login'
   post '/login', to: 'sessions#create'
 
-  get "/stylist/new", to: "stylist#new", as: :signup
-  post "stylist/new", to: "stylist#create"
+  get "/stylist/new", to: "stylist#new", as: :signup_form
+  post "stylist/create", to: "stylist#create", as: :signup
 
-  delete '/logout', to: 'sessions#logout', as: :logout
+  get '/logout', to: 'sessions#logout', as: :logout
 
 end

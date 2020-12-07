@@ -1,3 +1,18 @@
 <h3>Show</h3>
 
 <h5>Hello Stylist: <%= @stylist.name %></h5>
+
+<p>What would you like to do?</p>
+
+    <%= button_to "Create a new Appointment", new_appointment_path %><br>
+    
+    <%= button_to "View Your Appointments", appointment_index_path %><br>
+
+    <%= button_to "Create a New Client", new_client_path %><br>
+
+    <%= button_to "View Client List", client_index_path %><br>
+
+    
+
+
+<%= link_to "Logout", logout_path %>

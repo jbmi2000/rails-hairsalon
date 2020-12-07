@@ -5,14 +5,13 @@ class SessionsController < ApplicationController
     end
 
     def create
-        
         @stylist = Stylist.find_by(email: params[:stylist][:email])
     
         if @stylist && @stylist.authenticate(params[:stylist][:password])
             session[:stylist_id] = @stylist.id
             redirect_to stylist_path(@stylist)
         else
-            # flash[:message] = "Invalid email or password"
+           # flash[:messages] = @stylist.errors.full_messages
             redirect_back fallback_location: login_path   
             
         end
