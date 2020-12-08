@@ -1,1 +1,21 @@
 <h3>Create Your New Client</h3>
+
+<%= form_with model: @clients do |c| %>
+    <ul class="errors-list">
+      <% @client&.errors.full_messages.each do |err| %>
+        <li><%= err %></li>
+      <% end %>
+    </ul>
+  
+    <%= c.label :name %>
+    <%= c.text_field :name %>
+
+    <%= c.label :phone_number %>
+    <%= c.text_field :phone_number %>
+
+    <%= c.label :notes %>
+    <%= c.text_field :notes %>
+  
+    <%= c.submit %>
+  
+  <% end %>
