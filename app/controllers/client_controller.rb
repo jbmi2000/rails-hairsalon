@@ -12,6 +12,7 @@ class ClientController < ApplicationController
     end
 
     def create
+        byebug
         @client = Client.new(client_params)
         if @client.save
             redirect_to stylist_path(@client)
