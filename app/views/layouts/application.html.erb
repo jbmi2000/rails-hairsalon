@@ -10,11 +10,11 @@
   </head>
 
   <body>
-    <% if session[:user_id] %>
+    <% if session[:stylist_id] %>
       <%= button_to "Logout", logout_path, method: :delete, id: "signout-button" %>
-     <% end %>
+    <% end %>
 
-     <%= render "layouts/errors", errors: flash[:errors] %>
+   
 
     <%= yield %>
     

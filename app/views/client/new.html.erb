@@ -1,6 +1,6 @@
 <h3>Create Your New Client</h3>
 
-<%= form_with model: @clients do |c| %>
+<%= form_with model: @client, url: client_index_path, method: "post" do |c| %>
     <ul class="errors-list">
       <% @client&.errors.full_messages.each do |err| %>
         <li><%= err %></li>

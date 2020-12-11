@@ -7,15 +7,14 @@ class ClientController < ApplicationController
     end
     
     def new
-        @stylist = Stylist.new
         @client = Client.new
     end
 
     def create
-        byebug
+        
         @client = Client.new(client_params)
         if @client.save
-            redirect_to stylist_path(@client)
+            redirect_to client_path(@client)
         else
             render :new
         end
@@ -46,5 +45,9 @@ private
 
 def find_client
     @client = Client.find_by(id: params[:id])
+end
+
+def client_params
+    params.require(:client).permit(:name, :phone_number, :notes)
 end
 

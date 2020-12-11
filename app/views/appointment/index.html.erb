@@ -1,0 +1,13 @@
+<h1><%=@stylist.name%>'s Appointments</h1>
+
+<% @apps.each do |app| %>
+
+   <ul>
+   <li><p><%= app.client.name %>, <%=  app.date %> </p></li> 
+   </ul>
+   
+   <% end %>
+
+   <%= button_to "Back to your Dashboard", stylist_path(@stylist), :method => :get %> <br> 
+
+   <%= link_to "Logout", logout_path %>

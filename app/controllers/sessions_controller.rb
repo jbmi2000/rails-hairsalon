@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+    render 'layouts/_errors'
+
     def login
         @stylist = Stylist.new
     end
@@ -11,8 +13,9 @@ class SessionsController < ApplicationController
             session[:stylist_id] = @stylist.id
             redirect_to stylist_path(@stylist)
         else
-           # flash[:messages] = @stylist.errors.full_messages
-            redirect_back fallback_location: login_path   
+        
+            flash[:message] = "Invalid User name or Password.  Please try again"
+            redirect_to login_path    
             
         end
     end

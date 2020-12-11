@@ -1,9 +1,20 @@
 <h3>Welcome New Stylist</h3>
 <h7>Please Create your account
 
-<%= render "layouts/errors", errors: @stylist.errors.full_messages %>
+# <%= render "layouts/errors", errors: @stylist.errors.full_messages %>
 
-<%= form_with model: @stylist, url: signup_path do |f| %>
+<%= form_with model: @stylist, local: true, url: signup_path do |f| %>
+
+  <% if @stylist.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @stylist.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul> 
+    </div>
+  <% end %>
 
     <%= f.label :name %> 
     <%= f.text_field :name %>

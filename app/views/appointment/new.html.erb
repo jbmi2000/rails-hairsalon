@@ -1,1 +1,13 @@
 <h3>Create New Appointment</h3>
+
+<%= form_with model: @appointments do |a| %>
+   
+    
+    
+
+    <%= a.label :date %>
+    <%= a.text_field :date %><br><br> 
+  
+    <%= a.submit %> 
+
+    <% end %>
