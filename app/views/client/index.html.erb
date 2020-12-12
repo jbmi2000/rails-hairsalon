@@ -1,4 +1,6 @@
 <h1> Clients </h1>
+<%= link_to "Back to Dashboard", stylist_path(@stylist) %> <br>
 <% @clients.each do |client| %>
     <ul><%= link_to client.name, client_path(client) %></ul> 
     <% end %>
+    

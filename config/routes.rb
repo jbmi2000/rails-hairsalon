@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "sessions#login"
   
   resources :client do
-    resources :appointment, only: [:new, :create, :show]
+    resources :appointment, only: [:new, :create, :show, :edit, :update, :destroy]
   end
 
   resources :stylist, only: [:new, :create, :edit, :update, :show]
