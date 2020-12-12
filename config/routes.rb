@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   
   root "sessions#login"
   
-  resources :client
+  resources :client do
+    resources :appointment, only: [:new, :create, :show]
+  end
+
   resources :stylist, only: [:new, :create, :edit, :update, :show]
   resources :appointment
 

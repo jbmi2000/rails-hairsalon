@@ -1,6 +1,6 @@
 <h3> Client: <%= @client.name %></h3>
 
-<%= link_to "Create Appointment", new_appointment_path, :method => :get %><br><br>
+<%= link_to "Create Appointment", new_client_appointment_path(@client), :method => :get %><br><br>
 
 <%= link_to "Delete Client", client_path, method: :delete %><br><br>
 
