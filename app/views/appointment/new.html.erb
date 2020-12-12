@@ -1,4 +1,5 @@
 <h3>Create New Appointment</h3>
+<%= link_to "Back to Dashboard", stylist_path(current_user) %>
 
 <%= form_with model: @app, url: client_appointment_index_path do |a| %>
    

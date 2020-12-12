@@ -2,4 +2,6 @@
 <h3><%= current_user.name %>'s Appointments </h3>
 
 <%= @app.client.name %><br>
-<%= @app.date %>
+<%= @app.date %><br><br>
+
+<%= link_to "Back to Dashboard", stylist_path(current_user.id) %>

@@ -1,6 +1,6 @@
 <h3>Create Your New Client</h3>
 
-<%= form_with model: @client, url: client_index_path, method: "post" do |c| %>
+<%= form_with model: @client, url: client_index_path, local: true, method: "post" do |c| %>
   <% if @client.errors.any? %>
   <div id="error_explanation">
     <h2>There were some errors:</h2>
