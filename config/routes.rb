@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   get "/stylist/new", to: "stylist#new", as: :signup_form
   post "stylist/create", to: "stylist#create", as: :signup
 
-  # post "client/new", to: "client#create", as: 
-
   get '/logout', to: 'sessions#logout', as: :logout
 
 end

@@ -6,4 +6,4 @@
 
 <%= button_to "Back to Client List", client_index_path, :method => :get %>
 
-<%= button_to "Back to Dashboard", stylist_path(@stylist), :method => :get %> <br>
+<%= button_to "Back to Dashboard", stylist_path(current_user.id), :method => :get %> <br>
