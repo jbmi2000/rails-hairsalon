@@ -4,4 +4,6 @@
 <%= @app.client.name %><br>
 <%= @app.date %><br><br>
 
+<%= link_to "View Your Appointments", appointment_index_path %><br><br>
+
 <%= link_to "Back to Dashboard", stylist_path(current_user.id) %>

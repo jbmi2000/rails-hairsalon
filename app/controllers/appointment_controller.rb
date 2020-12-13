@@ -1,5 +1,7 @@
 class AppointmentController < ApplicationController
 
+    before_action :find_appointment, only: [:show, :edit, :destroy]
+
     def index
         
         @stylist = Stylist.find_by(id: current_user.id)
@@ -28,13 +30,13 @@ class AppointmentController < ApplicationController
 
     def show
         
-       @app = Appointment.find_by(id: params[:id])
+       
        # byebug
        # redirect_to client_appointment_path()
     end
 
     def edit
-       @app = Appointment.find_by(id: params[:id]) 
+    
     end
 
     def update
@@ -43,7 +45,6 @@ class AppointmentController < ApplicationController
    
 
     def destroy
-        @app = Appointment.find_by(id: params[:id])
         @app.destroy
         redirect_to appointment_index_path
     end
@@ -52,6 +53,10 @@ class AppointmentController < ApplicationController
 
     def appt_params
         params.require(:appointment).permit(:date, :stylist_id, :client_id)
+    end
+
+    def find_appointment
+        @app = Appointment.find_by(id: params[:id])
     end
 
     
