@@ -4,6 +4,6 @@ class Client < ApplicationRecord
     has_many :stylists, through: :appointments
 
     validates :name, presence: true
-    # validates :phone_number, presence: true, format: { with: /\S-\S-\S/, message: "XXX-XXX-XXXX"}
-    # validates :notes, presence: true
+    validates :phone_number, presence: true, format: { with: /\d{3}\-\d{3}\-\d{4}/, message: "Please enter a valid phone number, formatted xxx-xxx-xxxx"}
+    validates :notes, presence: true
 end

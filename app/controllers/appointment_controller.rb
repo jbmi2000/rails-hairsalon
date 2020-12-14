@@ -28,18 +28,17 @@ class AppointmentController < ApplicationController
 
     end
 
-    def show
-        
-       
+    def show       
        # byebug
        # redirect_to client_appointment_path()
     end
 
-    def edit
-    
+    def edit    
     end
 
     def update
+        @app.update(appt_params)
+        redirect_to client_appointment_path(@app)
     end
     
    

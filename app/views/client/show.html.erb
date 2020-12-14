@@ -9,6 +9,8 @@ Contact: <%= @client.phone_number %><br>
 
 <%= link_to "Delete Client", client_path, method: :delete %><br><br>
 
-<%= button_to "Back to Client List", client_index_path, :method => :get %>
+<%= button_to "Create a New Client", new_client_path, :method => :get %><br>
+
+<%= button_to "Back to Client List", client_index_path, :method => :get %><br>
 
 <%= button_to "Back to Dashboard", stylist_path(current_user.id), :method => :get %> <br>

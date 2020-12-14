@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :appointment, only: [:new, :create, :show, :edit, :update, :destroy]
   end
 
+  patch '/client/:client_id/appointment/:id/edit', to: 'appointment#edit', as: :edit
+
+  
+
   resources :stylist, only: [:new, :create, :edit, :update, :show]
   resources :appointment
 
@@ -17,5 +21,9 @@ Rails.application.routes.draw do
   post "stylist/create", to: "stylist#create", as: :signup
 
   get '/logout', to: 'sessions#logout', as: :logout
+
+  
+
+  
 
 end
