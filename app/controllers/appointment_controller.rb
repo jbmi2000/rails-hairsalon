@@ -1,6 +1,6 @@
 class AppointmentController < ApplicationController
 
-    before_action :find_appointment, only: [:show, :edit, :destroy]
+    before_action :find_appointment, only: [:show, :edit, :destroy, :update]
 
     def index
         
@@ -37,6 +37,7 @@ class AppointmentController < ApplicationController
     end
 
     def update
+        # byebug
         @app.update(appt_params)
         redirect_to client_appointment_path(@app)
     end

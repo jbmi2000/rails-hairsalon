@@ -1,7 +1,7 @@
 <h3>Appointment Edit for <%= @app.client.name %></h3>
 <%= link_to "Back to Dashboard", stylist_path(current_user.id) %>
 
-<%= form_for @app, url: edit_path, :_method => :patch do |a| %><br>
+<%= form_for @app, url: client_appointment_path, :_method => :patch do |a| %><br>
     <%= a.text_field :date %>
     <%= a.submit %>
 <% end %>
