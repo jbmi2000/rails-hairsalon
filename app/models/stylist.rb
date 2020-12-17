@@ -9,5 +9,7 @@ class Stylist < ApplicationRecord
     validates :email, presence: true, uniqueness: true, format: { with: /\S+@\S+\.\S+/, message: "Please enter a valid email address"}
     validates :password, confirmation: true
     validates :password_confirmation, presence: true
+
+
     
 end
